@@ -1,0 +1,64 @@
+{
+  "name": "Project Monitoring",
+  "namespace": "Stanford\\ProjectMonitoring",
+  "description": "This is a utility EM to monitor and update the status of all REDCap projects.  This EM only runs on a cron. There is a daily cron job that runs to update pid 15954 with newly created REDCap projects. There is also a monthly cron which monitors project status, statistics, usage, users, etc.",
+  "authors": [
+    {
+      "name": "Andy Martin",
+      "email": "andy123@stanford.edu",
+      "institution": "Stanford University"
+    },
+    {
+      "name": "Lee Ann Yasukawa",
+      "email": "yasukawa@stanford.edu",
+      "institution": "Stanford University"
+    }
+  ],
+
+  "permissions": [
+    "redcap_every_page_before_render"
+  ],
+
+  "enable-every-page-hooks-on-system-pages": true,
+
+  "links": {
+    "control-center": [
+      {
+        "name": "Project Monitoring Cron Instructions",
+        "icon": "gear",
+        "url": "index.php"
+      }
+    ],
+    "project": [
+    ]
+  },
+
+  "no-auth-pages": [
+  ],
+  "crons": [
+  ],
+
+  "system-settings": [
+    {
+      "key": "enable-system-debug-logging",
+      "name": "<b>Enable Debug Logging (system-wide)</b><i>(Requires emLogger)</i>",
+      "required": false,
+      "type": "checkbox"
+    },
+    {
+      "key": "monitor-project-id",
+      "name": "<b>Monitoring project id</b><br>REDCap project which stores project monitoring data",
+      "required": true,
+      "type": "project-id"
+    },
+    {
+      "key": "monitor-project-event-id",
+      "name": "<b>Monitoring project event id</b><br>REDCap project event which stores project monitoring data. Must be a number",
+      "required": true,
+      "type": "number"
+    }
+  ],
+
+  "project-settings": [
+  ]
+}
